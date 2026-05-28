@@ -1,8 +1,9 @@
 services:
   - type: web
     name: acs-backend
-    env: node
+    runtime: node
     repo: https://github.com/moeatwi/senior-full
+    branch: main
     rootDir: server
     buildCommand: npm install
     startCommand: node server.js
@@ -17,11 +18,14 @@ services:
         sync: false
       - key: FRONTEND_URL
         sync: false
-  - type: static
+
+  - type: web
     name: acs-frontend
+    runtime: static
     repo: https://github.com/moeatwi/senior-full
+    branch: main
     buildCommand: npm install && npm install @supabase/supabase-js && npm run build
-    publishDirectory: build
+    staticPublishPath: ./build
     envVars:
       - key: REACT_APP_SUPABASE_URL
         sync: false
