@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: acs-backend
+    name: moeatwi-acs-backend
     runtime: node
     plan: free
     repo: https://github.com/moeatwi/senior-full
@@ -21,7 +21,7 @@ services:
         sync: false
 
   - type: web
-    name: acs-frontend
+    name: moeatwi-acs-frontend
     runtime: static
     repo: https://github.com/moeatwi/senior-full
     branch: main
