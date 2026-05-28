@@ -23,7 +23,6 @@ services:
   - type: web
     name: acs-frontend
     runtime: static
-    plan: free
     repo: https://github.com/moeatwi/senior-full
     branch: main
     buildCommand: npm install && npm install @supabase/supabase-js && npm run build
