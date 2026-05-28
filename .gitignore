@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build output
+/build
+/dist
+server/build
+server/dist
+
+# Env / secrets
+.env
+.env.local
+.env.development
+.env.production
+.env.*.local
+server/.env
+server/.env.*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Misc
+supabase/migrate_products.mjs

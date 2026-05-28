@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: acs-backend
+    env: node
+    repo: https://github.com/moeatwi/senior-full
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: PORT
+        value: 10000
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+  - type: static
+    name: acs-frontend
+    repo: https://github.com/moeatwi/senior-full
+    buildCommand: npm install && npm install @supabase/supabase-js && npm run build
+    publishDirectory: build
+    envVars:
+      - key: REACT_APP_SUPABASE_URL
+        sync: false
+      - key: REACT_APP_SUPABASE_ANON_KEY
+        sync: false
+      - key: REACT_APP_API_URL
+        sync: false
+      - key: CI
+        value: false
